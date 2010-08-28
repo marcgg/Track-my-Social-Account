@@ -1,0 +1,82 @@
+/* VARIABLES */
+@gray: #151515;
+@white: #ccc;
+@width: 960px;
+
+/* GLOBAL */
+body{
+  background:url("/images/bg.jpg");
+}
+
+/* LAYOUT */
+#header{
+  background-color: @gray;
+  height:60px;
+  margin:40px 0;
+  padding:35px 0;
+  width:100%;
+}
+
+#logo{
+  background: url("/images/logo.jpg") no-repeat;
+  display:block;
+  width: @width;
+  height: 53px;
+  margin: auto;
+}
+
+#content{
+  width: @width;
+  margin: auto;
+  padding: 40px 0px;
+}
+
+#footer{
+  background-color:@gray;
+  height: 140px;
+  padding: 20px 0px;
+}
+#footer-content{
+  width: @width;
+  margin:auto;
+  color: @white;
+}
+
+/* HOME */
+#accounts{
+  .account{
+    margin: 0px 0px 60px 0px;
+    .name, .icon, .description{
+      display: inline-block;
+    }
+    .icon{
+      height: 64px;
+      width: 64px;
+      margin: 0px 40px 0px 0px;
+    }
+    .name{
+      height: 46px;
+      width: 400px;
+    }
+    .description{
+      height: 36px;
+      width: 446px;
+      background-position: right;
+    }
+  }
+  .facebook-page{
+    .icon{background:url("/images/facebook.png") no-repeat;}
+    .name{background:url("/images/facebook_page.png") no-repeat;}
+    .description{background:url("/images/facebook_page_desc.png") no-repeat scroll right 0px transparent;}
+  }
+  .facebook-account{
+    .icon{background:url("/images/facebook.png") no-repeat;}
+    .name{background:url("/images/facebook_account.png") no-repeat;}
+    .description{background:url("/images/facebook_account_desc.png") no-repeat scroll right 0px transparent;}
+  }
+  .twitter{
+    .icon{background:url("/images/twitter.png") no-repeat;}
+    .name{background:url("/images/twitter_account.png") no-repeat;}
+    .description{background:url("/images/twitter_desc.png") no-repeat scroll right 0px transparent;}
+  }
+}

@@ -1,0 +1,15 @@
+!!!
+%head
+  %title= "heh"
+  %link{:rel => "stylesheet/less", :href => "/stylesheets/main.less", :type => "text/css"}
+  = stylesheet_link_tag "reset"
+  = javascript_include_tag "less", "application"
+  
+%body
+  #header
+    = link_to "", "/", :id => "logo"
+  #content
+    = yield
+  #footer
+    #footer-content
+      hey
