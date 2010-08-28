@@ -1,0 +1,2 @@
+module PubAccountsHelper
+end

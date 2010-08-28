@@ -1,2 +1,7 @@
-// Place your application-specific JavaScript functions and classes here
-// This file is automatically included by javascript_include_tag :defaults
+$(function(){
+   $(".account").click(function(e){
+      var $this = $(this);
+      $this.find(".form").slideDown("slow");
+      $this.addClass("selected"); 
+   });
+});

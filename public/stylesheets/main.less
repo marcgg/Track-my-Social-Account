@@ -1,13 +1,22 @@
 /* VARIABLES */
 @gray: #151515;
-@white: #ccc;
+@white: #eee;
 @width: 960px;
+@facebook_blue: #3b5998;
 
 /* GLOBAL */
 body{
   background:url("/images/bg.jpg");
+  font-family: "Arial";
+  font-size: 13px;
 }
-
+a{
+  color: @white;
+  text-decoration:none;
+}
+a:hover{
+  text-decoration:underline;
+}
 /* LAYOUT */
 #header{
   background-color: @gray;
@@ -40,11 +49,21 @@ body{
   width: @width;
   margin:auto;
   color: @white;
+  font-size: 0.9em;
 }
 
 /* HOME */
 #accounts{
+  .facebook_page:hover, .facebook_account:hover, .facebook_account.selected, .facebook_page.selected{
+    background-color: rgba(189,203,231,0.5);
+  }
+  .twitter:hover, .twitter.selected{
+    background-color: rgba(210,244,255,0.5);
+  }
+  
   .account{
+    padding: 5px;
+    cursor: pointer;
     margin: 0px 0px 60px 0px;
     .name, .icon, .description{
       display: inline-block;
@@ -60,19 +79,58 @@ body{
     }
     .description{
       height: 36px;
-      width: 446px;
+      width: 436px;
       background-position: right;
     }
+    .form{
+      display:none;
+      form{
+        margin: 20px 20px 20px 105px;
+        label{
+          display: block;
+          font-weight: bold;
+        }
+        input[type="text"], textarea{
+          padding: 5px;
+          margin: 5px 0px 10px 0px;
+          width: 500px;
+        }
+        textarea{
+          height: 200px;
+        }
+        input[type="submit"]{
+          display:block;
+          margin: 20px 0px;
+          padding: 5px 10px;
+          border: 1px solid @gray;
+          font-size: 1.2em;
+          width: 120px;
+          color: #fff;
+        }
+      }
+      p{
+        margin: 20px 20px 20px 105px;
+      }
+      ul{
+        margin: 20px 20px 20px 105px;
+        li{
+          margin: 5px 0px 0px 40px;
+          list-style-type: square;
+        }
+      }
+    }
   }
-  .facebook-page{
+  .facebook_page{
     .icon{background:url("/images/facebook.png") no-repeat;}
     .name{background:url("/images/facebook_page.png") no-repeat;}
     .description{background:url("/images/facebook_page_desc.png") no-repeat scroll right 0px transparent;}
+    input[type="submit"]{background-color: @facebook_blue;}
   }
-  .facebook-account{
+  .facebook_account{
     .icon{background:url("/images/facebook.png") no-repeat;}
     .name{background:url("/images/facebook_account.png") no-repeat;}
     .description{background:url("/images/facebook_account_desc.png") no-repeat scroll right 0px transparent;}
+    input[type="submit"]{background-color: @facebook_blue;}
   }
   .twitter{
     .icon{background:url("/images/twitter.png") no-repeat;}

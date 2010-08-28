@@ -38,7 +38,6 @@ module Tsma
 
     config.generators do |g|
       g.template_engine :haml
-      g.test_framework :rspec, :fixture => true, :views => false
     end
     
     # Configure sensitive parameters which will be filtered from the log file.

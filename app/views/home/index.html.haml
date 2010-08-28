@@ -1,13 +1,8 @@
 #accounts
-  .account.facebook-page
-    .icon
-    .name
-    .description
-  .account.facebook-account
-    .icon
-    .name
-    .description
-  .account.twitter
-    .icon
-    .name
-    .description
+  - [:facebook_page, :facebook_account, :twitter].each do |k|
+    .account{:class => k.to_s}
+      .icon
+      .name
+      .description
+      .form= render :partial => k.to_s
+      

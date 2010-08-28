@@ -1,0 +1,2 @@
+class PubAccountsController < ApplicationController
+end
