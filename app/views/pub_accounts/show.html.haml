@@ -1,101 +1,109 @@
-:javascript	
-  var chart;
-  $(document).ready(function() {
-  	chart = new Highcharts.Chart({
-  		chart: {
-  			renderTo: 'container',
-  			zoomType: 'x'
-  		},
-  	        title: {
-  			text: 'Fan Count Evolution for Account "#{@pub_account.account}"'
-  		},
-  	        subtitle: {
-  			text: 'Click and drag in the plot area to zoom in'
-  		},
-  		xAxis: {
-  			type: 'datetime',
-  			maxZoom: 14 * 24 * 3600000, // fourteen days
-  			title: {
-  				text: null
-  			}
-  		},
-  		yAxis: {
-  			title: {
-  				text: 'Fan Count'
-  			},
-  			min: 0.6,
-  			startOnTick: false,
-  			showFirstLabel: false
-  		},
-  		tooltip: {
-  			formatter: function() {
-  				return ''+
-  					Highcharts.dateFormat('%A %B %e %Y', this.x) + ': '+
-  					''+ this.y +' Fans';
-  			}
-  		},
-  		legend: {
-  			enabled: false
-  		},
-  		plotOptions: {
-  			area: {
-  				fillColor: {
-  					linearGradient: [0, 0, 0, 300],
-  					stops: [
-  						[0, '#4572A7'],
-  						[1, 'rgba(2,0,0,0)']
-  					]
-  				},
-  				lineWidth: 1,
-  				marker: {
-  					enabled: false,
-  					states: {
-  						hover: {
-  							enabled: true,
-  							radius: 5
-  						}
-  					}
-  				},
-  				shadow: false,
-  				states: {
-  					hover: {
-  						lineWidth: 1						
-  					}
-  				}
-  			}
-  		},
-	
-  		series: [{
-  			type: 'area',
-  			name: 'USD to EUR',
-  			pointInterval: 24 * 3600 * 1000,
-  			pointStart: Date.UTC(#{@pub_account.stats_entries.first.when.strftime("%Y")}, (#{@pub_account.stats_entries.first.when.strftime("%m")} - 1), #{@pub_account.stats_entries.first.when.strftime("%d")}), // year month day 
-  			data: [
-          #{@pub_account.stats_entries.map{|se| se.total}.join(",")}
-  			]
-  		}]
-  	});
-  });
-
-
 #show				
   .account{:class => @pub_account.class.to_s.demodulize.underscore}
     .icon
     .name
     .description
     
-  #container{:style=>"width: 900px; height: 400px; margin: 0 auto"}
+  - if @pub_account.stats_entries.empty?
+    #cats
+      %p There is no data for #{@pub_account.account} yet, just cats. Come back in 24h since data is fetched every day.
+      = image_tag "cats.jpg"
+      
+  - else
+    :javascript	
+      var chart;
+      $(document).ready(function() {
+      	chart = new Highcharts.Chart({
+      		chart: {
+      			renderTo: 'container',
+      			zoomType: 'x'
+      		},
+      	        title: {
+      			text: 'Fan Count Evolution for Account "#{@pub_account.account}"'
+      		},
+      	        subtitle: {
+      			text: 'Click and drag in the plot area to zoom in'
+      		},
+      		xAxis: {
+      			type: 'datetime',
+      			maxZoom: 14 * 24 * 3600000, // fourteen days
+      			title: {
+      				text: null
+      			}
+      		},
+      		yAxis: {
+      			title: {
+      				text: 'Fan Count'
+      			},
+      			min: 0.6,
+      			startOnTick: false,
+      			showFirstLabel: false
+      		},
+      		tooltip: {
+      			formatter: function() {
+      				return ''+
+      					Highcharts.dateFormat('%A %B %e %Y', this.x) + ': '+
+      					''+ this.y +' Fans';
+      			}
+      		},
+      		legend: {
+      			enabled: false
+      		},
+      		plotOptions: {
+      			area: {
+      				fillColor: {
+      					linearGradient: [0, 0, 0, 300],
+      					stops: [
+      						[0, '#4572A7'],
+      						[1, 'rgba(2,0,0,0)']
+      					]
+      				},
+      				lineWidth: 1,
+      				marker: {
+      					enabled: false,
+      					states: {
+      						hover: {
+      							enabled: true,
+      							radius: 5
+      						}
+      					}
+      				},
+      				shadow: false,
+      				states: {
+      					hover: {
+      						lineWidth: 1						
+      					}
+      				}
+      			}
+      		},
+	
+      		series: [{
+      			type: 'area',
+      			name: 'USD to EUR',
+      			pointInterval: 24 * 3600 * 1000,
+      			pointStart: Date.UTC(#{@pub_account.stats_entries.first.when.strftime("%Y")}, (#{@pub_account.stats_entries.first.when.strftime("%m")} - 1), #{@pub_account.stats_entries.first.when.strftime("%d")}), // year month day 
+      			data: [
+              #{@pub_account.stats_entries.map{|se| se.total}.join(",")}
+      			]
+      		}]
+      	});
+      });
+
+
+
+    
+    #container{:style=>"width: 900px; height: 400px; margin: 0 auto"}
   
-  %table#data
-    %tr
-      %th Date
-      %th Fan Count
-    - @pub_account.stats_entries.each do |stats_entry|
+    %table#data
       %tr
-        %td= stats_entry.when
-        %td= stats_entry.total
+        %th Date
+        %th Fan Count
+      - @pub_account.stats_entries.each do |stats_entry|
+        %tr
+          %td= stats_entry.when
+          %td= stats_entry.total
   
-= link_to "Download CSV file for this account", csv_pub_account_path(@pub_account), :id => "download-csv"
+    = link_to "Download CSV file for this account", csv_pub_account_path(@pub_account), :id => "download-csv"
   
 #red-button
   This is your page and you don't want to be tracked? Please contact us so we can discuss it.

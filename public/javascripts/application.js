@@ -1,14 +1,15 @@
 $(function(){
     
-  $("#accounts .account").click(function(e){
+  $("#accounts .header").click(function(e){
     var $this = $(this);
-    var $form = $this.find(".form");
+    var $parent = $this.parent();
+    var $form = $parent.find(".form");
     if($form.is(":visible")){
       $form.slideUp("slow");
-      $this.removeClass("selected");
+      $parent.removeClass("selected");
     }else{
       $form.slideDown("slow");
-      $this.addClass("selected");
+      $parent.addClass("selected");
     }
     
   });
