@@ -1,8 +1,11 @@
 Tsma::Application.routes.draw do
   root :to => "home#index"
   
-  resources :pub_accounts, {:only => [:create, :show]}
-  
+  resources :pub_accounts do 
+    member do
+      get 'csv', :as => "csv"
+    end
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -14,4 +14,18 @@ class PubAccountsController < ApplicationController
   def show
     @pub_account = PubAccount.find(params[:id])
   end
+  
+  def csv
+    @pub_account = PubAccount.find(params[:id])
+    csv_string = FasterCSV.generate do |csv|
+      csv << ["Data for account #{@pub_account.account} (#{@pub_account.class})"]
+      csv << ["date", "count"]
+      @pub_account.stats_entries.each do |se|
+        csv << [se.when, se.total]
+      end
+    end
+
+    # send it to the browsah
+    send_data(csv_string, :type => 'text/csv; charset=iso-8859-1; header=present', :disposition => "attachment; filename=export-#{@pub_account.id}-#{@pub_account.account}.csv")
+  end
 end

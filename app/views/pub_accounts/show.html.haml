@@ -78,15 +78,12 @@
   });
 
 
-
 #show				
   .account{:class => @pub_account.class.to_s.demodulize.underscore}
     .icon
     .name
     .description
     
-
-  :plain
   #container{:style=>"width: 900px; height: 400px; margin: 0 auto"}
   
   %table#data
@@ -97,6 +94,8 @@
       %tr
         %td= stats_entry.when
         %td= stats_entry.total
-    
+  
+= link_to "Download CSV file for this account", csv_pub_account_path(@pub_account), :id => "download-csv"
+  
 #red-button
   This is your page and you don't want to be tracked? Please contact us so we can discuss it.
