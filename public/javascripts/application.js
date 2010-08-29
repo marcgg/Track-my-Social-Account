@@ -2,8 +2,15 @@ $(function(){
     
   $(".account").click(function(e){
     var $this = $(this);
-    $this.find(".form").slideDown("slow");
-    $this.addClass("selected"); 
+    var $form = $this.find(".form");
+    if($form.is(":visible")){
+      $form.slideUp("slow");
+      $this.removeClass("selected");
+    }else{
+      $form.slideDown("slow");
+      $this.addClass("selected");
+    }
+    
   });
    
   /* HANDLING NOTICES */
