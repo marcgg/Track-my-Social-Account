@@ -19,9 +19,9 @@ module StatsFetcher
         response = sess.get page.account
         count = ActiveSupport::JSON.decode(response.body)["fan_count"].to_i
         puts "\t=> count = #{count}"
-        page.stats_entries << StatsEntry.new(:total => count, :when => Time.now)
+        StatsEntry.create!(:total => count, :when => Time.now, :pub_account_id => page.id)
       rescue Exception => e
-        logger.info "Error (#{e.class})\n#{e.backtrace.to_yaml}"
+        puts "Error (#{e.class})\n#{e.backtrace.to_yaml}"
       end
     end
   end

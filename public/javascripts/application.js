@@ -1,6 +1,6 @@
 $(function(){
     
-  $(".account").click(function(e){
+  $("#accounts .account").click(function(e){
     var $this = $(this);
     var $form = $this.find(".form");
     if($form.is(":visible")){
