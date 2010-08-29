@@ -63,6 +63,44 @@ a:hover{
   font-size: 1.1em;
   display:none;
 }
+
+#show, #search-results{
+  background:#fff;
+}
+/* SEARCH */
+#search-wrapper{
+  width: @width;
+  margin: auto;
+}
+#search{
+  text-align:right;
+  margin-top: 42px;
+  width: 250px;
+  float:right;
+  padding: 10px 0px 20px 10px;
+  input[type="text"]{
+    padding: 5px;
+  }
+  input[type="submit"]{
+    border: 1px solid @gray;
+    background-color:@white;
+    font-size: 1.1em;
+    color: @gray;
+    padding: 5px;
+  }
+}
+#search-results{
+  padding: 20px;
+  a{
+    color: @gray;
+  }
+  .item{
+    padding: 10px 20px 20px 60px;
+  }
+  .facebook_page{
+    background:url("/images/small_facebook.png") no-repeat;
+  }
+}
 /* FOOTER */
 #me-myself-and-i{
   width: 200px;
@@ -188,6 +226,9 @@ a:hover{
 }
 
 /* SHOW PAGE for PUB ACCOUNTS */
+#show{
+  margin-top: -20px;
+}
 #red-button{
   text-align:right;
   font-size: 0.9em;
@@ -198,10 +239,6 @@ a:hover{
   text-align:center;
   padding-bottom: 20px;
   p{padding: 20px;}
-}
-#show{
-  background:#fff;
-  margin-top: -40px;
 }
 #download-csv{
   color:@gray;

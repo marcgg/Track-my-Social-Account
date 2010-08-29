@@ -15,6 +15,10 @@ class PubAccountsController < ApplicationController
     @pub_account = PubAccount.find(params[:id])
   end
   
+  def search
+    @pub_accounts = PubAccount.find(:all, :conditions => {:account => params[:search_value]})
+  end
+  
   def csv
     @pub_account = PubAccount.find(params[:id])
     csv_string = FasterCSV.generate do |csv|

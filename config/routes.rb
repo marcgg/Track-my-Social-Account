@@ -2,6 +2,9 @@ Tsma::Application.routes.draw do
   root :to => "home#index"
   
   resources :pub_accounts do 
+    collection do
+      post 'search', :as => "search"
+    end
     member do
       get 'csv', :as => "csv"
     end

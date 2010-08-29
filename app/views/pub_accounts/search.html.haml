@@ -1,0 +1,4 @@
+#search-results
+  - @pub_accounts.each do |pub_account|
+    .item{:class => pub_account.class.to_s.demodulize.underscore}
+      = link_to pub_account.account, pub_account_path(pub_account)
