@@ -10,13 +10,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100828192609) do
+ActiveRecord::Schema.define(:version => 20100829010648) do
 
   create_table "pub_accounts", :force => true do |t|
     t.string   "account"
     t.string   "reason"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "type"
+  end
+
+  create_table "stats_entries", :force => true do |t|
+    t.date    "when"
+    t.integer "total"
   end
 
 end
