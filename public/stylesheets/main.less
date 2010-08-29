@@ -52,6 +52,47 @@ a:hover{
   font-size: 0.9em;
 }
 
+#flash{
+  position:absolute;
+  top: 0px;
+  padding: 13px 0px;
+  color:@white;
+  background-color: @gray;
+  border-bottom: 1px solid #fff;
+  width: 100%;
+  text-align:center;
+  font-size: 1.1em;
+  display:none;
+}
+/* FOOTER */
+#me-myself-and-i{
+  width: 200px;
+  float:right;
+  text-align:right;
+}
+#credits{
+  background:url("/images/credits.png") no-repeat;
+  padding-left: 120px;
+  .entry{
+    width: 300px;
+    img{
+      float:left;
+      height: 25px;
+      margin-right: 10px;
+    }
+    a{
+      padding-top: 5px;
+      display:inline-block;
+    }
+  }
+}
+#sources{
+  background:url("/images/sources.png") no-repeat;
+  padding-left: 120px;
+  height: 40px;
+  margin-top: 20px;
+  padding-top: 3px;
+}
 /* HOME */
 #accounts{
   .facebook_page:hover, .facebook_account:hover, .facebook_account.selected, .facebook_page.selected{
@@ -137,4 +178,26 @@ a:hover{
     .name{background:url("/images/twitter_account.png") no-repeat;}
     .description{background:url("/images/twitter_desc.png") no-repeat scroll right 0px transparent;}
   }
+}
+
+/* CLEARFIX */
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+ 
+.clearfix {
+	display: inline-block;
+}
+ 
+html[xmlns] .clearfix {
+	display: block;
+}
+ 
+* html .clearfix {
+	height: 1%;
 }

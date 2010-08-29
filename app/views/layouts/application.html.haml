@@ -7,13 +7,14 @@
   = javascript_include_tag "less", "http://code.jquery.com/jquery-1.4.2.min.js", "application"
   
 %body
+  - unless flash[:notice].blank?
+    #flash= flash[:notice]
+
   #header
     = link_to "", "/", :id => "logo"
   
   #content
     = yield
     
-  #footer
-    #footer-content
-      Website by 
-      = link_to "@marcgg", "http://twitter.com/marcgg"
+  = render :partial => "/shared/footer"
+            
