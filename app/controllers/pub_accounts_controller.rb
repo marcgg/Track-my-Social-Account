@@ -1,4 +1,9 @@
 class PubAccountsController < ApplicationController
+  def index
+    @pub_accounts = PubAccount.all
+    render :action => "search"
+  end
+  
   def create
     klass = params[:type].constantize
     @pub_account = PubAccount.find_by_account(params[:pub_account][:account])
