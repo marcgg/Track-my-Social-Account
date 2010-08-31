@@ -1,2 +1,18 @@
 %p
-  Sorry but we're not able to track Twitter accounts yet!
+  So you want to track a Twitter account? No problems, but just so you know the system can only track public accounts, so ... no private accounts. 
+  
+= render :partial => "pseudo_legal_blurb"
+
+%p
+  Ok, enought talking, what account do you want to track?
+
+- form_for PubAccount.new do |f|
+  = f.label :account, "Twitter Account"
+  = f.text_field :account
+  
+  = f.label :reason, "Why do you want to track this account?"
+  = f.text_area :reason
+  
+  = hidden_field_tag :type, "PubAccounts::Twitter"
+  
+  = f.submit "Track!"
