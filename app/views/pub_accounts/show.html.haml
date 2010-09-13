@@ -35,7 +35,7 @@
       			title: {
       				text: 'Fan Count'
       			},
-      			min: 0.6,
+      			min: #{@min},
       			startOnTick: false,
       			showFirstLabel: false
       		},
@@ -83,7 +83,7 @@
       			pointInterval: 24 * 3600 * 1000,
       			pointStart: Date.UTC(#{@pub_account.stats_entries.first.when.strftime("%Y")}, (#{@pub_account.stats_entries.first.when.strftime("%m")} - 1), #{@pub_account.stats_entries.first.when.strftime("%d")}), // year month day 
       			data: [
-              #{@pub_account.stats_entries.map{|se| se.total}.join(",")}
+              #{@totals.join(",")}
       			]
       		}]
       	});

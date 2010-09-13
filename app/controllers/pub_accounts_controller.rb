@@ -18,6 +18,8 @@ class PubAccountsController < ApplicationController
   
   def show
     @pub_account = PubAccount.find(params[:id])
+    @totals = @pub_account.stats_entries.map{|se| se.total}
+    @min = @totals.min
   end
   
   def search
