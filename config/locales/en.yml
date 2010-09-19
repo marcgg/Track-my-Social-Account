@@ -6,3 +6,5 @@ en:
     show:
       facebook_page_count: "Fan Count"
       twitter_count: "Follower Count"
+      facebook_page_friends: "Fans"
+      twitter_friends: "Followers"

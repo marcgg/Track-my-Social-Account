@@ -33,7 +33,7 @@
       		},
       		yAxis: {
       			title: {
-      				text: 'Fan Count'
+      				text: '#{t("pub_accounts.show.#{@pub_account.class_name}_count")}'
       			},
       			min: #{@min},
       			startOnTick: false,
@@ -43,7 +43,7 @@
       			formatter: function() {
       				return ''+
       					Highcharts.dateFormat('%A %B %e %Y', this.x) + ': '+
-      					''+ this.y +' Fans';
+      					''+ this.y +' #{t("pub_accounts.show.#{@pub_account.class_name}_friends")}';
       			}
       		},
       		legend: {
