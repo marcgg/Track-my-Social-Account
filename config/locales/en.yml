@@ -2,9 +2,46 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  track: "Track!"
+  app_title: "Track My Social Account - Get more stats from Facebook and Twitter"
+  shared:
+    search: "Search"
+    footer:
+      by: "Website by "
+      follow_me: "Follow me on twitter!"
+      rails: "Website created using Ruby on Rails "
+      font: "Main font is Code Free Font"
+      less: "CSS handled with LESS JS"
+      main_icons: "Social media icons from Web Designer Depot"
+      haml: "Haml because I don't like writting HTML"
+      jquery: "jQuery as always"
+      charts: "Charts built with Highcharts"
+      additional_icons: "Additional icons by We Function"
+      github: "The sources for this website are hosted on github."
+      github_invite: "Feel free to send me feedbacks or add features."
   pub_accounts:
+    create:
+      notice: "Ok, got it. We'll start tracking this page from now on!"
+      error: "It looks like someone already asked us to track this page, so here is what we fetched so far!"
     show:
       facebook_page_count: "Fan Count"
+      facebook_page_count_evolution_for: "Fan Count Evolution for Facebook Page %{account}"
       twitter_count: "Follower Count"
+      twitter_count_evolution_for: "Follower Count Evolution for Twitter Account %{account}"
       facebook_page_friends: "Fans"
       twitter_friends: "Followers"
+      red_button: "This is your page and you don't want to be tracked? Please contact us so we can discuss it."
+      date: "Date"
+      download_csv: "Download CSV file for this account"
+  home:
+    enough_talking: "Ok, enought talking, what page do you want to track?"
+    facebook_account:
+      description: "Sorry but we're not able to track Facebook accounts yet!"
+    facebook_page:
+      reason: "Why do you want to track this page?"
+      account: "Facebook Page"
+      description: "Hey, what's up? Tracking the fan count of any Facebook page is easy and does not require any kind of login since this information is public. Just let us know what page you want to track and we'll start tracking it after less than 24 hours."
+    twitter:
+      description: "So you want to track a Twitter account? No problems, but just so you know the system can only track public accounts, so ... no private accounts."
+      acount: "Twitter Account"
+      reason: "Why do you want to track this account?"

@@ -9,9 +9,9 @@ class PubAccountsController < ApplicationController
     @pub_account = PubAccount.find_by_account(params[:pub_account][:account])
     if @pub_account.nil?
       @pub_account = klass.create!(params[:pub_account]) 
-      flash[:notice] = "Ok, got it. We'll start tracking this page from now on!"
+      flash[:notice] = t("pub_accounts.create.notice")
     else
-      flash[:notice] = "It looks like someone already asked us to track this page, so here is what we fetched so far!"
+      flash[:notice] = t("pub_accounts.create.error")
     end
     redirect_to pub_account_path(@pub_account)
   end

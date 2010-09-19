@@ -19,7 +19,7 @@
       			zoomType: 'x'
       		},
       	        title: {
-      			text: '#{t("pub_accounts.show.#{@pub_account.class_name}_count")} Evolution for Account "#{@pub_account.account}"'
+      			text: '#{t("pub_accounts.show.#{@pub_account.class_name}_count_evolution_for", :account => @pub_account.account)}'
       		},
       	        subtitle: {
       			text: 'Click and drag in the plot area to zoom in'
@@ -96,14 +96,13 @@
   
     %table#data
       %tr
-        %th Date
+        %th= t("pub_accounts.show.date")
         %th= t("pub_accounts.show.#{@pub_account.class_name}_count")
       - @pub_account.stats_entries.each do |stats_entry|
         %tr
           %td= stats_entry.when
           %td= stats_entry.total
   
-    = link_to "Download CSV file for this account", csv_pub_account_path(@pub_account), :id => "download-csv"
+    = link_to t("pub_accounts.show.download_csv"), csv_pub_account_path(@pub_account), :id => "download-csv"
   
-#red-button
-  This is your page and you don't want to be tracked? Please contact us so we can discuss it.
+#red-button= t("pub_accounts.show.red_button")

@@ -1,19 +1,17 @@
-%p
-  Hey, what's up? Tracking the fan count of any Facebook page is easy and does not require any kind of login since this information is public. Just let us know what page you want to track and we'll start tracking it after less than 24 hours.
+%p= t("home.facebook_page.description")
   
 = render :partial => "pseudo_legal_blurb"
 
-%p
-  Ok, enought talking, what page do you want to track?
+%p= t("home.enough_talking")
 
 - form_for PubAccount.new do |f|
-  = f.label :account, "Facebook Page"
+  = f.label :account, t("home.facebook_page.account")
   = f.text_field :account
   
-  = f.label :reason, "Why do you want to track this page?"
+  = f.label :reason, t("home.facebook_page.reason")
   = f.text_area :reason
   
   = hidden_field_tag :type, "PubAccounts::FacebookPage"
   
-  = f.submit "Track!"
+  = f.submit t("track")
   

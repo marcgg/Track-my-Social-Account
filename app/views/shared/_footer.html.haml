@@ -1,37 +1,37 @@
 #footer
   #footer-content
     #me-myself-and-i
-      Website by 
+      = t("shared.footer.by")
       = link_to "@marcgg", "http://twitter.com/marcgg"
       %br
-      = link_to "Follow me on twitter!", "http://twitter.com/marcgg"
+      = link_to t("shared.footer.follow_me"), "http://twitter.com/marcgg"
     #credits
       .entry.clearfix
         = image_tag "icons/rails.png"
-        = link_to "Website created using Ruby on Rails ", "http://rubyonrails.org/"
+        = link_to t("shared.footer.rails"), "http://rubyonrails.org/"
         &#9829;
       .entry.clearfix
         = image_tag "icons/font.jpg"
-        = link_to "Main font is Code Free Font", "http://fontfabric.com/code-free-font-3/"
+        = link_to t("shared.footer.font"), "http://fontfabric.com/code-free-font-3/"
       .entry.clearfix
         = image_tag "icons/less.png"
-        = link_to "CSS handled with LESS JS", "http://lesscss.org/"
+        = link_to t("shared.footer.less"), "http://lesscss.org/"
       .entry.clearfix
         = image_tag "icons/webdd.png"
-        = link_to "Social media icons from Web Designer Depot", " http://www.webdesignerdepot.com/2009/04/24-free-exclusive-vector-icons-handy/"
+        = link_to t("shared.footer.main_icons"), " http://www.webdesignerdepot.com/2009/04/24-free-exclusive-vector-icons-handy/"
       .entry.clearfix
         = image_tag "icons/haml.png"
-        = link_to "Haml because I don't like writting HTML", "http://haml-lang.com/"
+        = link_to t("shared.footer.haml"), "http://haml-lang.com/"
       .entry.clearfix
         = image_tag "icons/jquery.png"
-        = link_to "jQuery as always", "http://jquery.com/"
+        = link_to t("shared.footer.jquery"), "http://jquery.com/"
       .entry.clearfix
         = image_tag "icons/highcharts.png"
-        = link_to "Charts built with Highcharts", "http://www.highcharts.com"  
+        = link_to t("shared.footer_charts"), "http://www.highcharts.com"  
       .entry.clearfix
         = image_tag "icons/function.png"
-        = link_to "Additional icons by We Function", "http://wefunction.com/2008/07/function-free-icon-set/"
+        = link_to t("shared.footer.additional_icons"), "http://wefunction.com/2008/07/function-free-icon-set/"
     #sources
-      The sources for this website are hosted on 
-      = link_to "github.", "http://github.com/marcgg/tmsa"
-      Feel free to send me feedbacks or add features.
+      = link_to t("shared.footer.github"), "http://github.com/marcgg/tmsa"
+      = t("shared.footer.github_invite")
+      
