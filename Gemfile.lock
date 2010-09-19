@@ -34,6 +34,7 @@ GEM
     curb (0.7.8)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    eventmachine (0.12.10)
     fastercsv (1.5.3)
     haml (2.2.23)
     i18n (0.4.1)
@@ -75,6 +76,7 @@ PLATFORMS
 
 DEPENDENCIES
   curb
+  eventmachine
   fastercsv
   haml
   patron

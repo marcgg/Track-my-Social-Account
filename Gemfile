@@ -1,10 +1,19 @@
 source 'http://rubygems.org'
 
+# ROCKING
 gem 'rails', '3.0.0'
 
+# VIEWING
 gem 'haml'
-gem 'rspec'
-gem 'sqlite3-ruby'
-gem 'patron'
 gem 'fastercsv'
+
+# TESTING
+gem 'rspec'
+
+# STORING
+gem 'sqlite3-ruby'
+
+# FETCHING
+gem 'patron'
 gem 'curb'
+gem 'eventmachine'
